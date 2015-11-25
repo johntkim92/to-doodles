@@ -1,14 +1,15 @@
 var express = require('express'),
     server = express(),
-    // ejs = require('ejs'),
+    ejs = require('ejs'),
     bodyParser = require('body-parser'),
-    // methodOverride = require('method-override'),
+    methodOverride = require('method-override'),
     mongoose = require('mongoose'),
-    // session = require('express-session');
+    session = require('express-session');
     MONGOURI = process.env.MONGOLAB_URI || "mongodb://localhost:27017",
     DBNAME = "todoodles",
-    PORT = process.env.PORT || 3000;
-    Schema = mongoose.Schema;
+    PORT = process.env.PORT || 3000,
+    Schema = mongoose.Schema,
+    expressLayouts = require('express-ejs-layouts');
 
     mongoose.connect(MONGOURI + "/" + DBNAME);
 

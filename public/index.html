@@ -11,18 +11,23 @@
     Wheeeeeee HTML is here
     </h1>
 
-    <form ng-submit="createCtrl.create()" ng-controller="CreateController as createCtrl">
-        <input type="text" ng-model="createCtrl.value" />
+    <main ng-controller="ItemsController as items">
+      <form ng-submit="items.createItem()">
+        <input type="text" ng-model="items.value" />
         <input type="submit" value="Create!" />
-
-        <ul>
-          <li ng-repeat="item in createCtrl.todos">
-            {{item.todo_value}}
-            <br/>
-            Created at: {{item.created}}
-          </li>
-        </ul>
-    </form>
+      </form>
+      <ul>
+        <li ng-repeat="item in items.todos">
+          {{item.todo_value}}
+          <br/>
+          Created at: {{item.created}}
+          <br/>
+          <form ng-submit="items.deleteItem(item._id)">
+            <input type="submit" value="Delete">
+          </form>
+        </li>
+      </ul>
+    </main>
 
 </body>
 </html>

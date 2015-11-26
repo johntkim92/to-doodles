@@ -1,13 +1,13 @@
 var app = angular.module("TodoApp", []);
 
-app.controller('CreateController', ['$http', function($http){
+app.controller('ItemsController', ['$http', function($http){
     var controller = this;
 
     $http.get('items').success(function(data) {
       controller.todos = data;
     });
 
-    this.create = function() {
+    this.createItem = function() {
       $http.post('/items', {
         todo_value: this.value
       }).success(function(data) {
@@ -15,4 +15,17 @@ app.controller('CreateController', ['$http', function($http){
         controller.todos = data;
       });
     }
+
+    this.deleteItem = function(id) {
+      $http.delete('/items/'+ id)
+        .then(function(data){
+          controller.todos = data;
+          console.log(data);
+        }, function(error){
+          console.log(error);
+        });
+
+    };
+
+
 }]);

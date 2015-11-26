@@ -22,10 +22,17 @@ var Item = mongoose.model('Item', itemSchema);
 
 server.use(express.static('./public'));
 server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: true }));
+
+// Items
 
 server.get('/items', function(req, res) {
   Item.find({}, function(err, items) {
+    if (err) {
+      res.send(err);
+    } else {
     res.json(items);
+    }
   });
 });
 
@@ -37,9 +44,26 @@ server.post('/items', function(req, res) {
   });
 });
 
-mongoose.connect('mongodb://localhost:27017/todoodles');
-server.listen(3000, function() {
-  console.log("Server is listening!");
+server.delete('/items/:id', function(req, res) {
+  Item.findByIdAndRemove(req.params.id, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("gone");
+      Item.find(function(err, items) {
+        if(err){
+          res.send(err);
+        } else {
+        res.json(items);
+        }
+      });
+    }
+  });
+});
+
+// mongoose.connect('mongodb://localhost:27017/todoodles');
+server.listen(PORT, function() {
+  console.log("Server is listening! on port:", PORT);
 });
 //FOR USER LOGIN
 // server.set('views', './views');

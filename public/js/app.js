@@ -1,5 +1,11 @@
 var app = angular.module("TodoApp", []);
 
+// app.config(['$httpProvider', function($httpProvider) {
+//     $httpProvider.defaults.headers.patch = {
+//         'Content-Type': 'application/json;charset=utf-8'
+//     }
+// }])
+
 app.controller('ItemsController', ['$http', function($http){
     var controller = this;
 
@@ -17,6 +23,18 @@ app.controller('ItemsController', ['$http', function($http){
       }).success(function(data) {
         console.log(data);
         controller.todos = data;
+      });
+    }
+
+    this.editItem = function(id) {
+      $http.patch('/items/'+ id, {
+        item: {
+          todo_value: this.editItemValue
+        }
+      }).success(function(data) {
+        controller.getItems();
+      }).error(function(data, status) {
+        console.log(data);
       });
     }
 

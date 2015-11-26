@@ -44,6 +44,24 @@ server.post('/items', function(req, res) {
   });
 });
 
+server.patch('/items/:id', function(req, res) {
+  var itemOptions = req.body.item;
+  Item.findByIdAndUpdate(req.params.id, itemOptions, function (err) {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log("updated");
+      Item.find(function(err, items) {
+        if(err){
+          res.send(err);
+        } else {
+        res.json(items);
+        }
+      });
+    }
+  });
+});
+
 server.delete('/items/:id', function(req, res) {
   Item.findByIdAndRemove(req.params.id, function (err) {
     if (err) {

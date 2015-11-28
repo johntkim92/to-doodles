@@ -26,17 +26,17 @@ app.controller('ItemsController', ['$http', function($http){
       });
     }
 
-    this.editItem = function(id) {
-      $http.patch('/items/'+ id, {
-        item: {
-          todo_value: this.editItemValue
-        }
-      }).success(function(data) {
-        controller.getItems();
-      }).error(function(data, status) {
-        console.log(data);
-      });
-    }
+    // this.editItem = function(id) {
+    //   $http.patch('/items/'+ id, {
+    //     item: {
+    //       todo_value: this.editItemValue
+    //     }
+    //   }).success(function(data) {
+    //     controller.getItems();
+    //   }).error(function(data, status) {
+    //     console.log(data);
+    //   });
+    // }
 
     this.deleteItem = function(id) {
       $http.delete('/items/'+ id)
@@ -48,6 +48,18 @@ app.controller('ItemsController', ['$http', function($http){
         });
 
     };
-
-
 }]);
+
+app.controller('EditController', ['$http', '$scope', function($http, $scope) {
+  this.editItem = function() {
+    // console.log($scope.$parent.item._id);
+    $http.patch('/items/'+$scope.$parent.item._id, {
+      item: {
+        todo_value: this.editItemValue
+      }
+    }).success(function(data){
+      // console.log(data);
+      $scope.$parent.items.getItems();
+    });
+  }
+}])

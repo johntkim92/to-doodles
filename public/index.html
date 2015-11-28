@@ -26,10 +26,12 @@
           <form ng-submit="items.deleteItem(item._id)">
             <input type="submit" value="Delete">
           </form>
-          <form ng-submit="items.editItem(item._id)">
-            <input type="text" ng-model="items.editItemValue" placeholder="To-Do" value="{{item.todo_value}}"/>
-            <input type="submit" value="Edit!"/>
-          </form>
+          <div ng-controller="EditController as editCtrl">
+            <form ng-submit="editCtrl.editItem()">
+              <input type="text" ng-model="editCtrl.editItemValue" placeholder="To-Do" value="{{item.todo_value}}"/>
+              <input type="submit" value="Edit!"/>
+            </form>
+          </div>
         </li>
       </ul>
     </main>

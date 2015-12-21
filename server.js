@@ -15,7 +15,9 @@ var express = require('express'),
 
 var itemSchema = new Schema ({
   todo_value: { type: String, required: true },
-  created: { type: Date, default: Date.now }
+  created: { type: Date, default: Date.now },
+  due_date: { type: Date, default: Date.now },
+  finished: { type: Boolean, default: false }
 });
 
 var Item = mongoose.model('Item', itemSchema);

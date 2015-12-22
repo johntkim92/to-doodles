@@ -26,6 +26,8 @@ server.use(express.static('./public'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
+
+
 // Items
 
 server.get('/items', function(req, res) {
@@ -36,6 +38,8 @@ server.get('/items', function(req, res) {
     res.json(items);
     }
   });
+
+
 });
 
 server.post('/items', function(req, res) {

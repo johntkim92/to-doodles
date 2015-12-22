@@ -6,8 +6,20 @@ var app = angular.module("TodoApp", []);
 //     }
 // }])
 
+// for red highlight
+var reds = function () {
+
+$('.item-divs').each(function(){
+    if ($(this).find(".red-fin").text() == 'true') {
+        $(this).css('color','red');
+    }
+});
+
+};
+
 app.controller('ItemsController', ['$http', function($http){
     var controller = this;
+
 
     this.getItems = function () {
       $http.get('items').success(function(data) {
@@ -58,11 +70,12 @@ app.controller('EditController', ['$http', '$scope', function($http, $scope) {
     // console.log($scope.$parent.item._id);
     $http.patch('/items/'+$scope.$parent.item._id, {
       item: {
-        todo_value: this.editItemValue
+        todo_value: this.editItemValue,
+        finished: this.editItemFinished
       }
     }).success(function(data){
       // console.log(data);
       $scope.$parent.items.getItems();
     });
   }
-}])
+}]);

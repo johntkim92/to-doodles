@@ -19,7 +19,9 @@ app.controller('ItemsController', ['$http', function($http){
 
     this.createItem = function() {
       $http.post('/items', {
-        todo_value: this.value
+        todo_value: this.value,
+        due_date: this.due,
+
       }).success(function(data) {
         console.log(data);
         controller.todos = data;

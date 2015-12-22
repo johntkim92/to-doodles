@@ -9,33 +9,20 @@
     <link rel="stylesheet" href="css/app.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-    <h1>
-    To-Doodles
-    </h1>
+  <main ng-controller="ItemsController as items">
 
-    <main ng-controller="ItemsController as items">
+      <h1>
+        Throw your thoughts into the Matrix
+      </h1>
+      <div class="matrix-code">
+      </div>
+
       <form ng-submit="items.createItem()">
         <input type="text" ng-model="items.value" />
+        <input type="date" ng-model="items.due" />
         <input type="submit" value="Create!" />
       </form>
-      <ul id="lists">
-        <li ng-repeat="item in items.todos">
-          {{item.todo_value}}
-          <br/>
-          Created at: {{item.created}}
-          <br/>
-          <form ng-submit="items.deleteItem(item._id)">
-            <input type="submit" value="Delete">
-          </form>
-          <div ng-controller="EditController as editCtrl">
-            <form ng-submit="editCtrl.editItem()">
-              <input type="text" ng-model="editCtrl.editItemValue" placeholder="To-Do" value="{{item.todo_value}}"/>
-              <input type="submit" value="Edit!"/>
-            </form>
-          </div>
-        </li>
-      </ul>
-    </main>
+
 
     <div id="d1">
       <div id="d2">
@@ -48,18 +35,24 @@
                     <div id="d9">
                       <div id="d10">
                         <div id="d11">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </p>
+                          <ul id="lists">
+                            <li ng-repeat="item in items.todos">
+                              {{item.todo_value}}
+                              <br/>
+                              Created at: {{item.created}}
+                              <br/>
+                              Due: {{item.due_date}}
+                              <form ng-submit="items.deleteItem(item._id)">
+                                <input type="submit" value="Delete">
+                              </form>
+                              <div ng-controller="EditController as editCtrl">
+                                <form ng-submit="editCtrl.editItem()">
+                                  <input type="text" ng-model="editCtrl.editItemValue" placeholder="To-Do" value="{{item.todo_value}}"/>
+                                  <input type="submit" value="Edit!"/>
+                                </form>
+                              </div>
+                            </li>
+                          </ul>
 
                         </div>
                       </div>
@@ -72,6 +65,7 @@
         </div>
       </div>
     </div>
+  </main>
 
 
 </body>

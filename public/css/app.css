@@ -1,5 +1,8 @@
 * {
-  background-color: pink;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  color: white;
 }
 
 #lists {
@@ -11,20 +14,32 @@ p {
   color: white;
 }
 
+.matrix-code {
+  padding: 0;
+  margin: 0;
+  height: 200px;
+  width: 100%;
+  background: url('/code.gif');
+}
+
+h1 {
+  text-align: center;
+}
+
 
 
 
 /* test falling illusion */
 
 #d1 {
-  background: hsl(0, 0%, 30%);
+  background: hsl(0, 0%, 15%);
   width: 100%;
   height: 1000px;
   position: relative;
 }
 
 #d2 {
-  background: hsl(0, 0%, 27%);
+  background: hsl(0, 0%, 13.5%);
   /*width: 90%;
   height: 90%;
   margin: 0 auto;
@@ -38,7 +53,7 @@ p {
 }
 
 #d3 {
-  background: hsl(0, 0%, 24%);
+  background: hsl(0, 0%, 12%);
   /*width: 80%;
   height: 80%;
   margin: 0 auto;
@@ -52,7 +67,7 @@ transform: translate(-50%, -50%);
 }
 
 #d4 {
-  background: hsl(0, 0%, 21%);
+  background: hsl(0, 0%, 10.5%);
   /*width: 70%;
   height: 70%;
   margin: 0 auto;
@@ -66,7 +81,7 @@ transform: translate(-50%, -50%);
 }
 
 #d5 {
-  background: hsl(0, 0%, 18%);
+  background: hsl(0, 0%, 9%);
   /*width: 60%;
   height: 60%;
   margin: 0 auto;
@@ -80,7 +95,7 @@ transform: translate(-50%, -50%);
 }
 
 #d6 {
-  background: hsl(0, 0%, 15%);
+  background: hsl(0, 0%, 7.5%);
   /*width: 50%;
   height: 50%;
   margin: 0 auto;
@@ -95,36 +110,6 @@ overflow: scroll;
 }
 
 #d7 {
-  background: hsl(0, 0%, 12%);
-  /*width: 50%;
-  height: 50%;
-  margin: 0 auto;
-  position: relative;*/
-  width: 95%;
-  height: 95%;
-  position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-overflow: scroll;
-}
-
-#d8 {
-  background: hsl(0, 0%, 9%);
-  /*width: 50%;
-  height: 50%;
-  margin: 0 auto;
-  position: relative;*/
-  width: 95%;
-  height: 95%;
-  position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-overflow: scroll;
-}
-
-#d9 {
   background: hsl(0, 0%, 6%);
   /*width: 50%;
   height: 50%;
@@ -139,8 +124,38 @@ transform: translate(-50%, -50%);
 overflow: scroll;
 }
 
-#d10 {
+#d8 {
+  background: hsl(0, 0%, 4.5%);
+  /*width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  position: relative;*/
+  width: 95%;
+  height: 95%;
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+overflow: scroll;
+}
+
+#d9 {
   background: hsl(0, 0%, 3%);
+  /*width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  position: relative;*/
+  width: 95%;
+  height: 95%;
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+overflow: scroll;
+}
+
+#d10 {
+  background: hsl(0, 0%, 1.5%);
   /*width: 50%;
   height: 50%;
   margin: 0 auto;

@@ -16,10 +16,12 @@
       </h1>
       <div class="matrix-code">
       </div>
-
+      <h3>Record the steps necessary to complete your task/project</h3>
+      <br/>
       <form ng-submit="items.createItem()">
         <input type="text" ng-model="items.value" />
         <input type="date" ng-model="items.due" />
+        <!-- <input type="hidden" value="false" ng-model="items.finished" /> -->
         <input type="submit" value="Create!" />
       </form>
 
@@ -42,6 +44,8 @@
                               Created at: {{item.created}}
                               <br/>
                               Due: {{item.due_date}}
+                              <br/>
+                              Finished: {{item.finished}}
                               <form ng-submit="items.deleteItem(item._id)">
                                 <input type="submit" value="Delete">
                               </form>

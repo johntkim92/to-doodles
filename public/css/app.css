@@ -33,6 +33,11 @@ h1, h3 {
 margin: 5px;
 padding: 5px;
 }
+
+.true {
+  color: red;
+}
+
 /*.item-divs
 {
   position: relative;

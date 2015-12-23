@@ -1,21 +1,22 @@
 var app = angular.module("TodoApp", []);
 
+
 // app.config(['$httpProvider', function($httpProvider) {
 //     $httpProvider.defaults.headers.patch = {
 //         'Content-Type': 'application/json;charset=utf-8'
 //     }
 // }])
 
-// for red highlight
-var reds = function () {
+// app.controller('RedCtrl', [function() {
+//   angular.element(document).ready(function() {
+//     $('.item-divs').each(function(){
+//         if ($(this).find(".red-fin").text() == 'true') {
+//             $(this).css('color','red');
+//         }
+//     });
+//   })
+// }])
 
-$('.item-divs').each(function(){
-    if ($(this).find(".red-fin").text() == 'true') {
-        $(this).css('color','red');
-    }
-});
-
-};
 
 app.controller('ItemsController', ['$http', function($http){
     var controller = this;
@@ -28,6 +29,16 @@ app.controller('ItemsController', ['$http', function($http){
     }
 
     this.getItems();
+    // 
+    // this.findTrue = function () {
+    //   $('.item-divs').each(function(){
+    //       if ($(this).find(".red-fin").text() == 'true') {
+    //           $(this).css('color','red');
+    //       }
+    //   });
+    // }
+    //
+    // this.findTrue
 
     this.createItem = function() {
       $http.post('/items', {
@@ -63,6 +74,21 @@ app.controller('ItemsController', ['$http', function($http){
         });
 
     };
+
+    // // for red highlight
+    // this.reds = function () {
+    //
+    //   $(document).ready(function(){
+    //       $('.item-divs').each(function(){
+    //           if ($(this).find(".red-fin").text() == 'true') {
+    //               $(this).css('color','red');
+    //           }
+    //       });
+    //   });
+    //
+    // };
+    //
+    // this.reds();
 }]);
 
 app.controller('EditController', ['$http', '$scope', function($http, $scope) {

@@ -60,17 +60,17 @@
                                 <br/>
                                 Finished: <span class="red-fin"> <p class={{item.finished}} >{{item.finished}}</p></span>
                                 <form ng-submit="items.deleteItem(item._id)">
-                                  <input type="submit" value="Delete">
+                                  <input class="{{item.finished}}" type="submit" value="Delete">
                                 </form>
-                                <div ng-controller="EditController as editCtrl">
-                                  <form ng-submit="editCtrl.editItem()">
+                                <div class="{{item.finished}}" ng-controller="EditController as editCtrl">
+                                  <form class="{{item.finished}}" ng-submit="editCtrl.editItem()">
                                     <!-- <input type="text" ng-model="editCtrl.editItemValue" placeholder="To-Do" value="{{item.todo_value}}"/>
                                     <br/> -->
-                                    <input type="radio" ng-model="editCtrl.editItemFinished" value="false" checked/> In Progress
+                                    <input class="{{item.finished}}" type="radio" ng-model="editCtrl.editItemFinished" value="false" checked/> In Progress
                                     <br/>
-                                    <input type="radio" ng-model="editCtrl.editItemFinished" value="true" /> Complete
+                                    <input class="{{item.finished}}" type="radio" ng-model="editCtrl.editItemFinished" value="true" /> Complete
                                     <br/>
-                                    <input type="submit" value="Edit!"/>
+                                    <input class="{{item.finished}}" type="submit" value="Edit!"/>
                                     <br/>
                                     <br/>
                                   </form>

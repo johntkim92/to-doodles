@@ -30,7 +30,7 @@
       </div>
       <h3>Record the steps necessary to complete your task/project</h3>
       <br/>
-      <form ng-submit="items.createItem()">
+      <form id="input-submit" ng-submit="items.createItem()">
         <input type="text" ng-model="items.value" />
         <input type="date" ng-model="items.due" />
         <!-- <input type="hidden" value="false" ng-model="items.finished" /> -->
@@ -38,16 +38,16 @@
       </form>
 
 
-    <div id="d1">
-      <div id="d2">
-        <div id="d3">
-          <div id="d4">
-            <div id="d5">
-              <div id="d6">
-                <div id="d7">
-                  <div id="d8">
-                    <div id="d9">
-                      <div id="d10">
+    <div class="hvr-ripple-out" id="d1">
+      <div class="hvr-ripple-out" id="d2">
+        <div class="hvr-ripple-out" id="d3">
+          <div class="hvr-ripple-out" id="d4">
+            <div class="hvr-ripple-out" id="d5">
+              <div class="hvr-ripple-out" id="d6">
+                <div class="hvr-ripple-out" id="d7">
+                  <div class="hvr-ripple-out" id="d8">
+                    <div class="hvr-ripple-out" id="d9">
+                      <div  class="hvr-ripple-out" id="d10">
                         <div id="d11">
                           <ul id="lists">
                             <li class="item-list" ng-repeat="item in items.todos">
@@ -58,7 +58,7 @@
                                 <br/> -->
                                 Due: {{item.due_date}}
                                 <br/>
-                                Finished: <span class="red-fin"> <p class={{item.finished}} >{{item.finished}}</p></span>
+                                Finished: <span class="red-fin"> <span class={{item.finished}} >{{item.finished}}</span></span>
                                 <form ng-submit="items.deleteItem(item._id)">
                                   <input class="{{item.finished}}" type="submit" value="Delete">
                                 </form>

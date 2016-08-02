@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Meslo";
-  src: url('/MesloLGS-Regular.ttf');
+  src: url('../MesloLGS-Regular.ttf');
 }
 
 #lists {
@@ -30,7 +30,7 @@ p {
   margin: 0;
   height: 200px;
   width: 100%;
-  background: url('/code.gif');
+  background: url('../code.gif');
 }
 
 h1, h3 {

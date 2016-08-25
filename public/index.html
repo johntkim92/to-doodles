@@ -23,15 +23,21 @@
 </head>
 <body>
   <main ng-controller="ItemsController as items">
-      <h1>
-        Throw your thoughts into the Matrix
-      </h1>
+
       <div class="matrix-code">
+        <!-- <h1 id="main-h1" class="polya">Enter the matrix</h1> -->
+        <p class="polya">Enter</p>
+        <p class="polya">The</p>
+        <p id="last-p" class="polya">Matrix</p>
+
+        <img src="../code.gif">
       </div>
+
+
       <h3>Record the steps necessary to complete your task/project</h3>
       <br/>
       <form id="input-submit" ng-submit="items.createItem()">
-        <input type="text" ng-model="items.value" />
+        <input type="text" class="input-1" ng-model="items.value" />
         <input type="date" ng-model="items.due" />
         <!-- <input type="hidden" value="false" ng-model="items.finished" /> -->
         <input type="submit" value="Create!" />

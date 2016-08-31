@@ -35,11 +35,6 @@
   padding-left: 3rem;
 }
 
-p {
-  background: black;
-  color: white;
-}
-
 .matrix-code {
   position: relative;
   overflow: hidden;
@@ -70,7 +65,6 @@ p {
   position: relative;
   z-index: 2;
   font-family: "Polya";
-  font-weight: lighter;
   font-size: 100px;
   /*margin-left: 20%;
   margin-right: 20%;*/
@@ -89,6 +83,12 @@ p {
 p, h3 {
   text-align: center;
   color: #4ADA1E;
+  font-weight: lighter;
+  font-family: "Polya";
+}
+
+h3 {
+  padding-top: 30px;
 }
 
 .item-divs {
@@ -110,6 +110,19 @@ padding: 5px;
   width: 80%;
   margin: 0 auto;
   padding-right: 0;
+  color: white;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.input-1 {
+  height: 50px;
+  width: 300px;
+}
+
+input, label {
+  color: #A9A9A9;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
 }
 
 /*.input-1 {
@@ -145,6 +158,8 @@ input[type="text"]:focus {
   -webkit-transition-property: box-shadow, transform;
   transition-property: box-shadow, transform;
   z-index: 4;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+
 }
 .item-list:hover, .item-list:focus, .item-list:active {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
@@ -176,7 +191,8 @@ input[type="text"]:focus {
 .hvr-ripple-out:before {
   content: '';
   position: absolute;
-  border: green solid 6px;
+  border: green solid 1px;
+  /*border-radius: 5%;*/
   top: 0;
   right: 0;
   bottom: 0;
@@ -234,6 +250,7 @@ input[type="text"]:focus {
   width: 100%;
   height: 1000px;
   position: relative;
+  border: hsla(120, 100%, 25%, 1) solid 6px;
 }
 
 #d2 {
@@ -248,6 +265,8 @@ input[type="text"]:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: hsla(120, 100%, 25%, 0.9) solid 6px;
+
 }
 
 #d3 {
@@ -262,6 +281,8 @@ input[type="text"]:focus {
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+border: hsla(120, 100%, 25%, 0.8) solid 6px;
+
 }
 
 #d4 {
@@ -276,6 +297,8 @@ transform: translate(-50%, -50%);
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+border: hsla(120, 100%, 25%, 0.7) solid 6px;
+
 }
 
 #d5 {
@@ -290,6 +313,8 @@ transform: translate(-50%, -50%);
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+border: hsla(120, 100%, 25%, 0.6) solid 6px;
+
 }
 
 #d6 {
@@ -304,7 +329,9 @@ transform: translate(-50%, -50%);
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-overflow: scroll;
+/*overflow: scroll;*/
+border: hsla(120, 100%, 25%, 0.5) solid 6px;
+
 }
 
 #d7 {
@@ -319,7 +346,9 @@ overflow: scroll;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-overflow: scroll;
+/*overflow: scroll;*/
+border: hsla(120, 100%, 25%, 0.4) solid 6px;
+
 }
 
 #d8 {
@@ -334,7 +363,9 @@ overflow: scroll;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-overflow: scroll;
+/*overflow: scroll;*/
+border: hsla(120, 100%, 25%, 0.3) solid 6px;
+
 }
 
 #d9 {
@@ -349,7 +380,9 @@ overflow: scroll;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-overflow: scroll;
+/*overflow: scroll;*/
+border: hsla(120, 100%, 25%, 0.2) solid 6px;
+
 }
 
 #d10 {
@@ -364,7 +397,9 @@ overflow: scroll;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-overflow: scroll;
+/*overflow: scroll;*/
+border: hsla(120, 100%, 25%, 0.1) solid 6px;
+
 }
 
 #d11 {
@@ -379,5 +414,7 @@ overflow: scroll;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-overflow: scroll;
+overflow: auto;
+border: hsla(120, 100%, 25%, 0.05) solid 6px;
+
 }

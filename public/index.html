@@ -37,10 +37,12 @@
       <h3>Record the steps necessary to complete your task/project</h3>
       <br/>
       <form id="input-submit" ng-submit="items.createItem()">
-        <input type="text" class="input-1" ng-model="items.value" />
+        <label for="text">Task</label>
+        <input type="text" class="input-1" ng-model="items.value"/>
+        <label for="date">Due</label>
         <input type="date" ng-model="items.due" />
         <!-- <input type="hidden" value="false" ng-model="items.finished" /> -->
-        <input type="submit" value="Create!" />
+        <input type="submit" value="Post!" />
       </form>
 
 
